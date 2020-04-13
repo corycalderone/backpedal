@@ -1,0 +1,10 @@
+<h1>hello</h1>
+<ul>
+    <% songs.forEach(function(song){ %>
+        <li>
+            <%= song.artist['#text'] %> |
+                <%= song.name %> |
+                    <%= song.amountOfPlays %>
+        </li>
+        <%  }); %>
+</ul>

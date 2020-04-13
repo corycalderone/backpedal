@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        backpedal
+    </title>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <a href="/"><h1>backpedal</h1></a>
+    <p>Pick your time range, see your old favorites.</p>
+    <div>
+        <div class="login">
+            <% if (loggedIntoSpotify) { %>
+                <% } else { %>
+                    1. if you would like to generate a Spotify playlist from your results, click <a id="login" href="/login">here</a> to sign in BEFORE generating!
+                    <% } %>
+        </div>
+        <form class="generate" action="/generate" method="POST">
+        <div>
+            <%= loggedIntoSpotify ? '1.' : '2.' %> my last fm username is
+            <input type="text" name="user" id="user">
+        </div> 
+        <div>
+            <%= loggedIntoSpotify ? '2.' : '3.' %> and i would my top <input type="number" name="amt" id="amt"> songs
+        </div>
+        <div>
+            <%= loggedIntoSpotify ? '3.' : '4.' %> from
+            <input type="date" name="from" id="from"> to
+            <input type="date" name="to" id="to">
+        </div>
+            <button id="go" type="submit">go</button>
+        </form>
+    </div>
+    <div class="loader"></div>
+    <div class="songs">
+        <% if (loggedIntoSpotify) { %>
+            <form class="playlist" action="" method="">
+                <button id="spotify">i would like this to be a spotify playlist</button>
+                <input type="text" name="title" id="title">
+            </form>
+            <% } %>
+                <ul></ul>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="javascripts/index.js"></script>
+
+</html>

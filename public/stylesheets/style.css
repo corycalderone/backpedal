@@ -1,0 +1,48 @@
+html {
+    background-color: #297373 !important;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #297373;
+    color: #FF8552;
+    animation: fadeIn ease 3s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+
+input#amt {
+    width: 30px;
+}
+
+input, select, textarea {
+    color: #FF8552;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+  
+@keyframes fadeIn { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+} 
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
